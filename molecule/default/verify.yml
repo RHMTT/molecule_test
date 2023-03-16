@@ -5,13 +5,13 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: "stat /tmp/hosts-from-controller exists"
-      stat:
+    - name: "Register the file '/tmp/hosts-from-controller' if it exists"
+      ansible.builtin.stat:
         path: "/tmp/hosts-from-controller"
       register: hosts_txt_stat
 
-    - name: "check if /tmp/hosts-from-controller exists"
-      assert:
+    - name: "Check if /tmp/hosts-from-controller exists"
+      ansible.builtin.assert:
         that:
           - hosts_txt_stat.stat.exists == True
         success_msg: "/tmp/hosts-from-controller exists"
@@ -20,5 +20,5 @@
     - name: Check that the phil user is present
       ansible.builtin.getent:
         database: passwd
-        key: phila
+        key: phil
         fail_key: true
