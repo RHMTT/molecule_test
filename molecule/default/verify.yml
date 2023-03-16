@@ -20,5 +20,5 @@
     - name: Check that the phil user is present
       ansible.builtin.getent:
         database: passwd
-        key: phil
+        key: phila
         fail_key: true
