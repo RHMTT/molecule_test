@@ -1,2 +1,9 @@
 ---
 # tasks file for molecule_test
+- name: Debugging playbook
+  ansible.builtin.debug:
+    msg: "Host is a {{ ansible_virtualization_type }} and is runnig kernel version {{ ansible_kernel }}"
+
+- name: Create user
+  ansible.builtin.user:
+    user: phila
