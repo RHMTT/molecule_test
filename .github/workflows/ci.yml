@@ -21,7 +21,7 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          python3 -m pip install molecule[podman] yamllint ansible-lint
+          python3 -m pip install molecule molecule-plugins[podman] yamllint ansible-lint
 
       - name: Run Molecule tests.
         run: molecule test
