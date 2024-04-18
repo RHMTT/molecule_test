@@ -4,6 +4,6 @@
   ansible.builtin.debug:
     msg: "Host is a {{ ansible_virtualization_type }} and is runnig kernel version {{ ansible_kernel }}."
 
-- name: Create user
+- name: Create user.
   ansible.builtin.user:
     user: phil
